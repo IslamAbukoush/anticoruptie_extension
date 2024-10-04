@@ -1,0 +1,36 @@
+{
+    "manifest_version": 3,
+    "name": "Anticoruptie Auto Save",
+    "version": "1.0",
+    "description": "A simple Chrome extension that automatically saves your anticoruptie article, no more pain or devestation.",
+    "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "permissions": ["storage", "activeTab", "scripting"],
+  
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+      }
+    },
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*.anticoruptie.md/admin/*"],
+        "js": ["content.js"],
+        "resources": ["data.html"]
+      }
+    ],
+
+    "web_accessible_resources": [
+        {
+        "resources": ["data.html", "icon128.png"],
+        "matches": ["<all_urls>"]
+        }
+    ]
+  }
