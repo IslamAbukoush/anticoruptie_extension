@@ -1,24 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Extension</title>
+  <title>Draft Manager</title>
   <style>
     body {
       width: 300px;
-      padding: 10px;
+      font-family: Arial, sans-serif;
+      padding: 15px;
+      background-color: #f4f4f4;
     }
-    button {
+    .btn {
+      display: block;
       width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      margin-bottom: 5px;
+      padding: 12px;
+      margin-bottom: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #45a049;
+    }
+    .btn-danger {
+      background-color: #f44336;
+    }
+    .btn-danger:hover {
+      background-color: #d32f2f;
+    }
+    .stats {
+      margin-top: 15px;
+      text-align: center;
+      color: #666;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
-  <button id="showData">Show Stored Data</button>
-  <button id="redirectToDataPage">View Data in New Page</button>
-  <button id="clearData">Clear Stored Data</button>
+  <button class="btn" id="showData">View Saved Drafts</button>
+  <button class="btn" id="redirectToDataPage">Open Drafts in New Tab</button>
+  <button class="btn btn-danger" id="clearData">Clear All Drafts</button>
+  <div id="draftStats" class="stats">
+    Drafts: <span id="draftCount">0</span>
+  </div>
   <script src="popup.js"></script>
 </body>
 </html>
